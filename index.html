@@ -25,7 +25,7 @@
     --muted: #a29c93;
     --line: #2a2833;
     --pink: #f89018;
-    --mint: #9a948b;
+    --mint: #e02b20;
     --radius: 16px;
     --max: 1140px;
     --display: "Gotham Black", "Gotham", "Montserrat", "Segoe UI", system-ui, sans-serif;
@@ -127,6 +127,11 @@
   .card p { margin: 0; color: var(--muted); font-size: 14px; }
   .card .tag { display: inline-block; margin-bottom: 12px; font-size: 10px; letter-spacing: .18em; text-transform: uppercase; font-weight: 800; color: var(--pink); }
 
+  .video-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .video-card { margin: 0; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; background: var(--panel); }
+  .video-card video { display: block; width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: cover; }
+  .video-card figcaption { display: flex; justify-content: space-between; gap: 12px; padding: 14px 16px; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+  .video-card strong { font-family: var(--display); color: var(--cream); font-size: 13px; letter-spacing: .06em; }
   .shops { background: var(--panel-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
   .shop-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
   .shop {
@@ -139,7 +144,7 @@
   .shop em { display: block; margin-top: 14px; font-style: normal; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; font-weight: 800; color: var(--mint); }
 
   .about-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 56px; align-items: start; }
-  .about-grid p { color: #cfc9c0; margin: 0 0 16px; }
+  .about-grid p { color: #cfc9c0; margin: 0 0 16px; }`r`n  .about-lead { font-size: clamp(18px, 2vw, 21px); font-weight: 700; color: var(--cream) !important; margin-bottom: 20px !important; }
   .facts { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
   .facts li { display: flex; justify-content: space-between; gap: 20px; padding: 13px 0; border-bottom: 1px solid var(--line); font-size: 14px; }
   .facts span:first-child { color: var(--muted); }
@@ -184,6 +189,7 @@
     <nav aria-label="Primary">
       <ul>
         <li><a href="#services" data-en="Services" data-es="Servicios">Services</a></li>
+        <li><a href="#videos" data-en="Video" data-es="Vídeo">Video</a></li>
         <li><a href="#shops" data-en="Shops" data-es="Tiendas">Shops</a></li>
         <li><a href="#about" data-en="About" data-es="Sobre mí">About</a></li>
         <li><a href="#contact" data-en="Contact" data-es="Contacto">Contact</a></li>
@@ -204,7 +210,7 @@
     <div class="wrap hero-grid">
       <div>
         <p class="eyebrow" data-en="3D sculptor · collectibles · art toys" data-es="Escultor 3D · coleccionables · art toys">3D sculptor · collectibles · art toys</p>
-        <h1 data-en="Sculpting collectibles with a <em>90s soul</em>." data-es="Esculpiendo coleccionables con <em>alma de los 90</em>.">Sculpting collectibles with a <em>90s soul</em>.</h1>
+        <h1 data-en="Sculpting collectibles with a <em>nostalgic soul</em>. Because the best toys are never forgotten." data-es="Esculpiendo coleccionables con <em>alma de nostalgia</em>. Porque los mejores juguetes nunca se olvidan.">Esculpiendo coleccionables con <em>alma de nostalgia</em>. Porque los mejores juguetes nunca se olvidan.</h1>
         <p class="lead lead-motto" data-en="I am a creative 3D artist oriented to develop the better practices the industry requires." data-es="Soy un artista 3D creativo orientado a desarrollar las mejores prácticas que exige la industria.">I am a creative 3D artist oriented to develop the better practices the industry requires.</p>
         <p class="lead" data-en="Collectible figures, art toys and custom pieces, from the first sketch to a print-ready model." data-es="Figuras coleccionables, art toys y piezas personalizadas, del primer boceto al modelo listo para imprimir.">Collectible figures, art toys and custom pieces, from the first sketch to a print-ready model.</p>
         <div class="actions">
@@ -258,6 +264,30 @@
     </div>
   </section>
 
+  <section class="videos" id="videos">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow" data-en="Video" data-es="Vídeo">Video</p>
+        <h2 data-en="Turntables &amp; promos." data-es="Turntables y promos.">Turntables &amp; promos.</h2>
+        <p data-en="Loops of finished pieces, straight from the render." data-es="Loops de piezas terminadas, directos del render.">Loops of finished pieces, straight from the render.</p>
+      </div>
+      <div class="video-grid">
+        <figure class="video-card">
+          <video src="assets/video-wolverine.mp4" poster="assets/video-wolverine.jpg" autoplay loop muted playsinline preload="metadata" width="800" height="800" aria-label="Wolverine turntable by Manu Gallo"></video>
+          <figcaption><strong>Wolverine</strong><span data-en="Turntable" data-es="Turntable">Turntable</span></figcaption>
+        </figure>
+        <figure class="video-card">
+          <video src="assets/video-spiderman.mp4" poster="assets/video-spiderman.jpg" autoplay loop muted playsinline preload="metadata" width="800" height="800" aria-label="Spider-Man Noir fan art promo by Manu Gallo"></video>
+          <figcaption><strong>Spider-Man Noir</strong><span data-en="Fan art promo" data-es="Promo fan art">Fan art promo</span></figcaption>
+        </figure>
+        <figure class="video-card">
+          <video src="assets/video-joker.mp4" poster="assets/video-joker.jpg" autoplay loop muted playsinline preload="metadata" width="800" height="800" aria-label="The Joker bust turntable by Manu Gallo"></video>
+          <figcaption><strong>The Joker</strong><span data-en="Bust turntable" data-es="Turntable del busto">Bust turntable</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
   <section class="shops" id="shops">
     <div class="wrap">
       <div class="section-head">
@@ -290,12 +320,12 @@
       <div>
         <p class="eyebrow" data-en="About" data-es="Sobre mí">About</p>
         <h2 data-en="Manu Gallo" data-es="Manu Gallo">Manu Gallo</h2>
-        <p data-en="I'm a 3D sculptor working in ZBrush and 3ds Max. I grew up on 80s and 90s imagery — cartoons, heavy metal covers, arcade cabinets and toy shelves — and that is still what I like to build." data-es="Soy escultor 3D y trabajo en ZBrush y 3ds Max. Crecí con la imaginería de los 80 y 90 —dibujos animados, portadas de heavy metal, máquinas arcade y estanterías de juguetes— y sigo construyendo eso.">I'm a 3D sculptor working in ZBrush and 3ds Max. I grew up on 80s and 90s imagery — cartoons, heavy metal covers, arcade cabinets and toy shelves — and that is still what I like to build.</p>
+        <p class="about-lead" data-en="I am a creative 3D artist oriented to develop better the practices required by the industry." data-es="Soy un artista 3D creativo orientado a desarrollar mejores prácticas de las que exige la industria.">I am a creative 3D artist oriented to develop better the practices required by the industry.</p>
         <p data-en="I work on original characters, fan art and custom commissions, and I keep improving every model: better shapes, better splits, cleaner files for printing." data-es="Trabajo en personajes originales, fan art y encargos personalizados, y mejoro cada modelo: mejores formas, mejores cortes y archivos más limpios para imprimir.">I work on original characters, fan art and custom commissions, and I keep improving every model: better shapes, better splits, cleaner files for printing.</p>
       </div>
       <ul class="facts">
         <li><span data-en="Based in" data-es="Ubicación">Based in</span><span data-en="Bogotá, Colombia" data-es="Bogotá, Colombia">Bogotá, Colombia</span></li>
-        <li><span data-en="Tools" data-es="Herramientas">Tools</span><span>ZBrush · 3ds Max</span></li>
+        <li><span data-en="Tools" data-es="Herramientas">Tools</span><span>ZBrush · Blender · 3ds Max · Substance Painter</span></li>
         <li><span data-en="Focus" data-es="Enfoque">Focus</span><span data-en="Collectibles · art toys" data-es="Coleccionables · art toys">Collectibles · art toys</span></li>
         <li><span data-en="Licences" data-es="Licencias">Licences</span><span data-en="Personal &amp; commercial" data-es="Personal y comercial">Personal &amp; commercial</span></li>
         <li><span data-en="Delivery" data-es="Entrega">Delivery</span><span data-en="Digital files" data-es="Archivos digitales">Digital files</span></li>
