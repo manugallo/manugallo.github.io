@@ -4,8 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Manu Gallo — 3D sculptor &amp; collectible artist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
 <meta name="description" content="Manu Gallo is a 3D sculptor and digital artist creating collectible figures, art toys and custom sculpts. Original designs, print-ready files, fan art and commissions.">
 <meta name="theme-color" content="#0a0a0d">
+<link rel="icon" href="assets/logo.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/logo.png">
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="Manu Gallo — 3D sculptor &amp; collectible artist">
@@ -19,10 +24,11 @@
     --cream: #f5efe7;
     --muted: #a29c93;
     --line: #2a2833;
-    --pink: #ff2d6f;
-    --mint: #29e0d0;
+    --pink: #f89018;
+    --mint: #9a948b;
     --radius: 16px;
     --max: 1140px;
+    --display: "Gotham Black", "Gotham", "Montserrat", "Segoe UI", system-ui, sans-serif;
   }
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
@@ -44,14 +50,10 @@
   }
   .bar { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 14px 0; }
   .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-  .brand-mark {
-    width: 38px; height: 38px; border-radius: 10px; display: grid; place-items: center;
-    background: linear-gradient(135deg, var(--pink), #7b1fa2);
-    font-weight: 900; font-size: 15px; letter-spacing: .02em;
-  }
+  .brand-mark { width: 38px; height: 38px; border-radius: 50%; display: block; }
   .brand-txt { display: flex; flex-direction: column; line-height: 1.1; }
-  .brand-txt strong { font-size: 15px; letter-spacing: .16em; text-transform: uppercase; }
-  .brand-txt span { font-size: 10px; letter-spacing: .22em; text-transform: uppercase; color: var(--muted); }
+  .brand-txt strong { font-family: var(--display); font-size: 17px; letter-spacing: .14em; text-transform: uppercase; }
+  
   nav ul { display: flex; gap: 22px; list-style: none; margin: 0; padding: 0; font-size: 13px; letter-spacing: .1em; text-transform: uppercase; font-weight: 700; }
   nav a { text-decoration: none; color: var(--muted); }
   nav a:hover, nav a:focus-visible { color: var(--cream); }
@@ -65,11 +67,11 @@
 
   .btn {
     display: inline-flex; align-items: center; gap: 8px; text-decoration: none;
-    padding: 13px 22px; border-radius: 999px; font-size: 13px; font-weight: 800;
+    padding: 13px 22px; border-radius: 999px; font-family: var(--display); font-size: 13px; font-weight: 800;
     letter-spacing: .1em; text-transform: uppercase; border: 1px solid transparent; cursor: pointer;
   }
-  .btn-primary { background: var(--pink); color: #fff; }
-  .btn-primary:hover { background: #e51e5f; }
+  .btn-primary { background: var(--pink); color: #0a0a0d; }
+  .btn-primary:hover { background: #ffa53a; }
   .btn-ghost { border-color: var(--line); color: var(--cream); }
   .btn-ghost:hover { border-color: var(--cream); }
 
@@ -80,12 +82,18 @@
     font-size: 11px; font-weight: 800; letter-spacing: .2em; text-transform: uppercase; color: var(--mint);
   }
   .eyebrow::before { content: ""; width: 26px; height: 2px; background: var(--mint); }
-  h1 { font-size: clamp(36px, 5vw, 60px); line-height: 1.02; letter-spacing: -.03em; margin: 0 0 20px; font-weight: 800; }
+  h1 { font-family: var(--display); font-size: clamp(36px, 5vw, 60px); line-height: 1.02; letter-spacing: -.03em; margin: 0 0 20px; font-weight: 800; }
   h1 em { font-style: normal; color: var(--pink); }
-  .lead { font-size: 18px; color: #cfc9c0; margin: 0 0 26px; max-width: 54ch; }
+  .lead-motto { font-size: clamp(19px, 2.1vw, 23px); font-weight: 700; color: var(--cream); }`r`n  .lead { font-size: 18px; color: #cfc9c0; margin: 0 0 26px; max-width: 54ch; }
   .actions { display: flex; flex-wrap: wrap; gap: 12px; }
   .hero-card { margin: 0; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); background: var(--panel); }
-  .hero-card img { width: 100%; height: auto; }
+  .hero-card img, .hero-card video { width: 100%; height: auto; display: block; aspect-ratio: 1 / 1; object-fit: cover; }
+  .hero-poster { background: linear-gradient(150deg, #2a1024 0%, #12101a 55%, #0a0a0d 100%); }
+  .poster { aspect-ratio: 1 / 1; display: flex; flex-direction: column; justify-content: space-between; padding: 40px; }
+  .poster-top, .poster-bot { font-size: 11px; letter-spacing: .24em; text-transform: uppercase; font-weight: 800; color: var(--muted); }
+  .poster strong { font-family: var(--display); font-size: clamp(40px, 5.4vw, 70px); line-height: .9; letter-spacing: -.05em; font-weight: 900; }
+  .poster strong::first-line { color: var(--cream); }
+  .poster-bot { color: var(--pink); }
   .hero-card figcaption {
     display: flex; justify-content: space-between; gap: 16px; padding: 13px 18px;
     font-size: 10px; letter-spacing: .16em; text-transform: uppercase; font-weight: 700; color: var(--muted);
@@ -100,7 +108,7 @@
 
   section { padding: 72px 0; }
   .section-head { max-width: 62ch; margin: 0 0 34px; }
-  h2 { font-size: clamp(26px, 3.4vw, 40px); line-height: 1.1; letter-spacing: -.02em; margin: 0 0 12px; }
+  h2 { font-family: var(--display); font-size: clamp(26px, 3.4vw, 40px); line-height: 1.1; letter-spacing: -.02em; margin: 0 0 12px; }
   .section-head p { margin: 0; color: var(--muted); }
 
   .work { background: var(--panel-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
@@ -108,14 +116,14 @@
   .piece { margin: 0; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; background: var(--panel); }
   .piece img { width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: cover; }
   .piece figcaption { padding: 14px 16px 16px; }
-  .piece strong { display: block; font-size: 15px; letter-spacing: -.01em; }
+  .piece strong { font-family: var(--display); display: block; font-size: 15px; letter-spacing: -.01em; }
   .piece span { font-size: 12px; color: var(--muted); letter-spacing: .04em; }
   .piece.wide { grid-column: span 2; }
   .piece.wide img { aspect-ratio: 2 / 1; }
 
   .cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
   .card { border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; background: var(--panel); }
-  .card h3 { margin: 0 0 8px; font-size: 18px; letter-spacing: -.01em; }
+  .card h3 { font-family: var(--display); margin: 0 0 8px; font-size: 18px; letter-spacing: -.01em; }
   .card p { margin: 0; color: var(--muted); font-size: 14px; }
   .card .tag { display: inline-block; margin-bottom: 12px; font-size: 10px; letter-spacing: .18em; text-transform: uppercase; font-weight: 800; color: var(--pink); }
 
@@ -148,6 +156,7 @@
   .foot { display: flex; justify-content: space-between; gap: 18px; flex-wrap: wrap; align-items: center; }
   .foot a { text-decoration: none; }
   .foot a:hover { color: var(--cream); }
+  .foot-social { display: flex; flex-wrap: wrap; gap: 16px; }
 
   @media (max-width: 900px) {
     .hero-grid, .about-grid, .contact-grid { grid-template-columns: 1fr; }
@@ -169,12 +178,11 @@
 <header>
   <div class="wrap bar">
     <a class="brand" href="#top">
-      <span class="brand-mark">MG</span>
-      <span class="brand-txt"><strong>Manu Gallo</strong><span data-en="3D studio" data-es="Estudio 3D">3D studio</span></span>
+      <img class="brand-mark" src="assets/logo.png" alt="Manu Gallo Studio logo" width="38" height="38">
+      <span class="brand-txt"><strong>Manugallo Studio</strong></span>
     </a>
     <nav aria-label="Primary">
       <ul>
-        <li><a href="#work" data-en="Work" data-es="Trabajo">Work</a></li>
         <li><a href="#services" data-en="Services" data-es="Servicios">Services</a></li>
         <li><a href="#shops" data-en="Shops" data-es="Tiendas">Shops</a></li>
         <li><a href="#about" data-en="About" data-es="Sobre mí">About</a></li>
@@ -197,15 +205,16 @@
       <div>
         <p class="eyebrow" data-en="3D sculptor · collectibles · art toys" data-es="Escultor 3D · coleccionables · art toys">3D sculptor · collectibles · art toys</p>
         <h1 data-en="Sculpting collectibles with a <em>90s soul</em>." data-es="Esculpiendo coleccionables con <em>alma de los 90</em>.">Sculpting collectibles with a <em>90s soul</em>.</h1>
-        <p class="lead" data-en="I'm Manu Gallo. I design and sculpt collectible figures, art toys and custom pieces, from the first sketch to a print-ready model. Original characters, fan art and commissions." data-es="Soy Manu Gallo. Diseño y esculpo figuras coleccionables, art toys y piezas personalizadas, del primer boceto al modelo listo para imprimir. Personajes originales, fan art y encargos.">I'm Manu Gallo. I design and sculpt collectible figures, art toys and custom pieces, from the first sketch to a print-ready model. Original characters, fan art and commissions.</p>
+        <p class="lead lead-motto" data-en="I am a creative 3D artist oriented to develop the better practices the industry requires." data-es="Soy un artista 3D creativo orientado a desarrollar las mejores prácticas que exige la industria.">I am a creative 3D artist oriented to develop the better practices the industry requires.</p>
+        <p class="lead" data-en="Collectible figures, art toys and custom pieces, from the first sketch to a print-ready model." data-es="Figuras coleccionables, art toys y piezas personalizadas, del primer boceto al modelo listo para imprimir.">Collectible figures, art toys and custom pieces, from the first sketch to a print-ready model.</p>
         <div class="actions">
-          <a class="btn btn-primary" href="#work" data-en="See the work" data-es="Ver el trabajo">See the work</a>
+          <a class="btn btn-primary" href="https://www.artstation.com/artist/manugallo" target="_blank" rel="noopener" data-en="See the portfolio" data-es="Ver el portafolio">See the portfolio</a>
           <a class="btn btn-ghost" href="#contact" data-en="Work with me" data-es="Trabajemos juntos">Work with me</a>
         </div>
       </div>
       <figure class="hero-card">
-        <img src="assets/hero.webp" alt="Joker collectible bust sculpted by Manu Gallo" width="1600" height="1600">
-        <figcaption><span data-en="The Joker · collectible bust" data-es="The Joker · busto coleccionable">The Joker · collectible bust</span><span data-en="Personal work" data-es="Trabajo personal">Personal work</span></figcaption>
+        <video src="assets/hero.mp4" poster="assets/hero-poster.jpg" autoplay loop muted playsinline preload="metadata" width="900" height="900" aria-label="Jean Grey turntable - 3D sculpt by Manu Gallo"></video>
+        <figcaption><span data-en="Jean Grey · turntable" data-es="Jean Grey · turntable">Jean Grey · turntable</span><span data-en="3D sculpt" data-es="Escultura 3D">3D sculpt</span></figcaption>
       </figure>
     </div>
   </section>
@@ -216,59 +225,6 @@
       <span>Collectible figures</span><span>Art toys</span><span>Custom sculpts</span><span>Print-ready STL</span><span>Fan art</span>
     </div>
   </div>
-
-  <section class="work" id="work">
-    <div class="wrap">
-      <div class="section-head">
-        <p class="eyebrow" data-en="Selected work" data-es="Trabajo seleccionado">Selected work</p>
-        <h2 data-en="Pieces built to be held." data-es="Piezas hechas para tener en la mano.">Pieces built to be held.</h2>
-        <p data-en="A mix of original characters, art toys and painted customs." data-es="Una mezcla de personajes originales, art toys y customs pintados.">A mix of original characters, art toys and painted customs.</p>
-      </div>
-      <div class="grid">
-        <figure class="piece">
-          <img src="assets/work-joker.webp" alt="The Joker collectible bust with playing cards and a nameplate" width="1600" height="1600">
-          <figcaption>
-            <strong data-en="The Joker" data-es="The Joker">The Joker</strong>
-            <span data-en="Collectible bust · fan art" data-es="Busto coleccionable · fan art">Collectible bust · fan art</span>
-          </figcaption>
-        </figure>
-        <figure class="piece">
-          <img src="assets/work-gallos.webp" alt="Sculpt of two fighting roosters" width="1600" height="1600">
-          <figcaption>
-            <strong data-en="Gallos" data-es="Gallos">Gallos</strong>
-            <span data-en="Original sculpt · pair figure" data-es="Escultura original · figura doble">Original sculpt · pair figure</span>
-          </figcaption>
-        </figure>
-        <figure class="piece">
-          <img src="assets/work-megaboy.webp" alt="Megaboy art toy in blue armour" width="1600" height="1600">
-          <figcaption>
-            <strong data-en="Megaboy" data-es="Megaboy">Megaboy</strong>
-            <span data-en="Art toy · stylised" data-es="Art toy · estilizado">Art toy · stylised</span>
-          </figcaption>
-        </figure>
-        <figure class="piece">
-          <img src="assets/work-goku.webp" alt="Goku Super Saiyan 4 painted custom figure" width="1280" height="1600">
-          <figcaption>
-            <strong data-en="Goku SSJ4" data-es="Goku SSJ4">Goku SSJ4</strong>
-            <span data-en="Painted custom · fan art" data-es="Custom pintado · fan art">Painted custom · fan art</span>
-          </figcaption>
-        </figure>
-        <figure class="piece">
-          <img src="assets/work-trophy.webp" alt="Golden trophy 3D render" width="1600" height="1600">
-          <figcaption>
-            <strong data-en="Champion trophy" data-es="Trofeo campeón">Champion trophy</strong>
-            <span data-en="Product model · render" data-es="Modelo de producto · render">Product model · render</span>
-          </figcaption>
-        </figure>
-        <figure class="piece">
-          <img src="assets/work-megaboy-parts.webp" alt="Megaboy exploded parts view for printing" width="1600" height="1600">
-          <figcaption>
-            <strong data-en="Megaboy · parts" data-es="Megaboy · piezas">Megaboy · parts</strong>
-            <span data-en="Print breakdown · keys" data-es="Despiece · encajes">Print breakdown · keys</span>
-          </figcaption>
-        </figure>      </div>
-    </div>
-  </section>
 
   <section id="services">
     <div class="wrap">
@@ -294,9 +250,9 @@
           <p data-en="Hollowing, keying, supports and unsupported versions, checked in the slicer before delivery." data-es="Huecos, encajes, soportes y versiones sin soportar, revisados en el slicer antes de entregar.">Hollowing, keying, supports and unsupported versions, checked in the slicer before delivery.</p>
         </div>
         <div class="card">
-          <span class="tag" data-en="Paint" data-es="Pintura">Paint</span>
-          <h3 data-en="Custom finishing" data-es="Acabado personalizado">Custom finishing</h3>
-          <p data-en="Painted prototypes and customs for collectors, from single pieces to small runs." data-es="Prototipos pintados y customs para coleccionistas, desde pieza única hasta tandas pequeñas.">Painted prototypes and customs for collectors, from single pieces to small runs.</p>
+          <span class="tag" data-en="Commissions" data-es="Comisiones">Commissions</span>
+          <h3 data-en="Custom commissions" data-es="Encargos a medida">Custom commissions</h3>
+          <p data-en="Characters, replicas or one-off gifts. You bring the idea, I deliver the model ready to print." data-es="Personajes, réplicas o piezas para regalo. Tú traes la idea y yo entrego el modelo listo para imprimir.">Characters, replicas or one-off gifts. You bring the idea, I deliver the model ready to print.</p>
         </div>
       </div>
     </div>
@@ -310,25 +266,22 @@
         <p data-en="Files, early access and commercial licences live in the shops below." data-es="Los archivos, el acceso anticipado y las licencias comerciales están en las tiendas de abajo.">Files, early access and commercial licences live in the shops below.</p>
       </div>
       <div class="shop-grid">
-        <a class="shop" href="https://linktr.ee/manugallo" target="_blank" rel="noopener">
+        <a class="shop" href="https://www.patreon.com/manugallostudio" target="_blank" rel="noopener">
           <strong>Patreon</strong>
           <span data-en="Monthly drops, early access and exclusive models." data-es="Lanzamientos mensuales, acceso anticipado y modelos exclusivos.">Monthly drops, early access and exclusive models.</span>
           <em data-en="Subscribe →" data-es="Suscríbete →">Subscribe →</em>
         </a>
-        <a class="shop" href="https://linktr.ee/manugallo" target="_blank" rel="noopener">
+        <a class="shop" href="https://cults3d.com/es/usuarios/manugallo/creaci%C3%B3n" target="_blank" rel="noopener">
           <strong>Cults3D</strong>
           <span data-en="Single models and packs, personal and commercial licences." data-es="Modelos sueltos y packs, con licencia personal y comercial.">Single models and packs, personal and commercial licences.</span>
           <em data-en="Browse models →" data-es="Ver modelos →">Browse models →</em>
         </a>
-        <a class="shop" href="https://linktr.ee/manugallo" target="_blank" rel="noopener">
+        <a class="shop" href="https://www.cgtrader.com/manugallo" target="_blank" rel="noopener">
           <strong>CGTrader</strong>
           <span data-en="Game-ready and high-poly assets for studios." data-es="Assets game-ready y high-poly para estudios.">Game-ready and high-poly assets for studios.</span>
           <em data-en="View store →" data-es="Ver tienda →">View store →</em>
         </a>
       </div>
-      <p class="section-head" style="margin:18px 0 0; font-size:12px; color:var(--muted);">
-        <span data-en="Shop links open through the official hub while the direct store pages are confirmed." data-es="Los enlaces abren el hub oficial mientras se confirman las páginas directas de cada tienda.">Shop links open through the official hub while the direct store pages are confirmed.</span>
-      </p>
     </div>
   </section>
 
@@ -359,9 +312,13 @@
         <a class="btn btn-primary" href="https://linktr.ee/manugallo" target="_blank" rel="noopener" data-en="Message me" data-es="Escríbeme">Message me</a>
       </div>
       <ul class="contact-links">
+        <li><a href="https://www.patreon.com/manugallostudio" target="_blank" rel="noopener"><span>Patreon</span>Subscribe</a></li>
+        <li><a href="https://cults3d.com/es/usuarios/manugallo/creaci%C3%B3n" target="_blank" rel="noopener"><span>Cults3D</span>Models</a></li>
+        <li><a href="https://www.cgtrader.com/manugallo" target="_blank" rel="noopener"><span>CGTrader</span>Store</a></li>
+        <li><a href="https://www.artstation.com/artist/manugallo" target="_blank" rel="noopener"><span>ArtStation</span>Portfolio</a></li>
+        <li><a href="https://www.instagram.com/manugallostudio/" target="_blank" rel="noopener"><span>Instagram</span>@manugallostudio</a></li>
+        <li><a href="https://www.youtube.com/channel/UC1N2L6bwRXSwwOiGWsHNumw" target="_blank" rel="noopener"><span>YouTube</span>Videos</a></li>
         <li><a href="https://linktr.ee/manugallo" target="_blank" rel="noopener"><span data-en="All links" data-es="Todos los enlaces">All links</span>linktr.ee/manugallo</a></li>
-        <li><a href="https://linktr.ee/manugallo" target="_blank" rel="noopener"><span data-en="Instagram" data-es="Instagram">Instagram</span>@manugallo</a></li>
-        <li><a href="#shops"><span data-en="Shops" data-es="Tiendas">Shops</span>Patreon · Cults3D · CGTrader</a></li>
       </ul>
     </div>
   </section>
@@ -370,7 +327,14 @@
 <footer>
   <div class="wrap foot">
     <span>© 2026 Manu Gallo. <span data-en="All rights reserved." data-es="Todos los derechos reservados.">All rights reserved.</span></span>
-    <span data-en="Fan art pieces are not for sale." data-es="Las piezas de fan art no están a la venta.">Fan art pieces are not for sale.</span>
+    <span class="foot-social">
+      <a href="https://x.com/manugallo3d" target="_blank" rel="noopener">X</a>
+      <a href="https://www.tiktok.com/@manugallostudio" target="_blank" rel="noopener">TikTok</a>
+      <a href="https://www.linkedin.com/in/manuel-gallo-4b002b27a/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.facebook.com/manu.gallo1" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://www.twitch.tv/manugallo1" target="_blank" rel="noopener">Twitch</a>
+      <a href="https://foundation.app/manugallo" target="_blank" rel="noopener">Foundation</a>
+    </span>
     <a href="#top" data-en="Back to top ↑" data-es="Volver arriba ↑">Back to top ↑</a>
   </div>
 </footer>
